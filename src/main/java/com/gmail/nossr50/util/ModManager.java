@@ -51,6 +51,7 @@ public class ModManager {
     private List<Material> customPickaxes = new ArrayList<Material>();
     private List<Material> customShovels  = new ArrayList<Material>();
     private List<Material> customSwords   = new ArrayList<Material>();
+    private List<Material> customTridents   = new ArrayList<Material>();
     private HashMap<Material, CustomTool> customToolMap = new HashMap<Material, CustomTool>();
 
     public void registerCustomArmor(CustomArmorConfig config) {
@@ -126,6 +127,10 @@ public class ModManager {
 
     public boolean isCustomSword(Material material) {
         return Config.getInstance().getToolModsEnabled() && customSwords.contains(material);
+    }
+
+    public boolean isCustomTrident(Material material) {
+        return Config.getInstance().getToolModsEnabled() && customTridents.contains(material);
     }
 
     public boolean isCustomOre(Material data) {

@@ -148,6 +148,24 @@ public final class ItemUtils {
     }
 
     /**
+     * Checks if the item is a trident.
+     *
+     * @param item Item to check
+     * @return true if the item is a sword, false otherwise
+     */
+    public static boolean isTrident(ItemStack item) {
+        Material type = item.getType();
+
+        switch (type) {
+            case TRIDENT:
+                return true;
+
+            default:
+                return mcMMO.getModManager().isCustomTrident(type);
+        }
+    }
+
+    /**
      * Checks if the item counts as unarmed.
      *
      * @param item Item to check

@@ -10,7 +10,8 @@ public enum ToolType {
     HOE("Herbalism.Ability.Lower", "Herbalism.Ability.Ready"),
     PICKAXE("Mining.Ability.Lower", "Mining.Ability.Ready"),
     SHOVEL("Excavation.Ability.Lower", "Excavation.Ability.Ready"),
-    SWORD("Swords.Ability.Lower", "Swords.Ability.Ready");
+    SWORD("Swords.Ability.Lower", "Swords.Ability.Ready"),
+    TRIDENT("Tridents.Ability.Lower", "Tridents.Ability.Ready");
 
     private String lowerTool;
     private String raiseTool;
@@ -53,6 +54,9 @@ public enum ToolType {
 
             case SWORD:
                 return ItemUtils.isSword(itemStack);
+
+            case TRIDENT:
+                return ItemUtils.isTrident(itemStack);
 
             default:
                 return false;
